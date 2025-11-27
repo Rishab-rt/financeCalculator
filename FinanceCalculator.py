@@ -66,7 +66,7 @@ def incomeHistory():
     global balance, transactions
     for i in range (len(incomeAmt)):
         print(f"{incomelist[i]}${incomeAmt[i]}")
-    pause
+
 def generateSummary():
     global balance, transactions
     viewBalance()
