@@ -1,6 +1,7 @@
 incomelist = []
 expenselist = []
 expenseamt = []
+incomeAmt = []
 transactions = 0
 balance = 0 
 
@@ -30,6 +31,7 @@ def addIncome():
     global balance, transactions
     amount = int(input("Please enter the amount that you have earned: $"))
     balance += amount
+    incomeAmt.append(amount)
     type = input("What is the category?: ")
     incomelist.append(type)
 
@@ -54,6 +56,21 @@ def viewTransactionHistory():
     global balance, transactions
     for i in range (transactions):
         print(f"{expenselist[i]}${expenseamt[i]}")
+
+def averageTransactions():
+    global balance, transactions
+    average = sum(expenseamt)/transactions
+    print(f"You have spent on average ${average} per transaction for the last {len(expenseamt)} transactions")
+
+def incomeHistory():
+    global balance, transactions
+    for i in range (len(incomeAmt)):
+        print(f"{incomelist[i]}${incomeAmt[i]}")
+    pause
+def generateSummary():
+    global balance, transactions
+    viewBalance()
+    averageTransactions()
   
 
 trackerRun()
