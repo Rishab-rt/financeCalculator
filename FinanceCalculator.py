@@ -1,7 +1,7 @@
 incomelist = []
 expenselist = []
 expenseamt = []
-transactions  = 0
+transactions = 0
 balance = 0 
 
 def trackerRun():
@@ -46,14 +46,14 @@ def viewBalance():
     global balance, transactions
     view = input("Would you like to view balance?: ")
     if view == "yes":
-        print("You have a balance of $", balance)
+        print(f"You have a balance of ${balance}")
     
 
 
 def viewTransactionHistory():
     global balance, transactions
     for i in range (transactions):
-        print(expenselist[i],"$",expenseamt[i])
+        print(f"{expenselist[i]}${expenseamt[i]}")
   
 
 trackerRun()
